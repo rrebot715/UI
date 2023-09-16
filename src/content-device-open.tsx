@@ -91,7 +91,7 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                     Max. Power
                                 </td>
                                 <td>
-                                   {/*  {item.unifi.network.radios['6e'].maxPower}*/}
+                                    {item.unifi.network.radios['6e'].maxPower}
                                 </td>
                             </tr>
                             <tr>
@@ -99,7 +99,7 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                     Speed
                                 </td>
                                 <td>
-                                   {/*  {item.unifi.network.radios.na.maxSpeedMegabitsPerSecond}*/}
+                                    {item.unifi.network.radios.na.maxSpeedMegabitsPerSecond}
                                 </td>
                             </tr>
                             <tr>

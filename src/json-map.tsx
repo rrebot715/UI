@@ -34,7 +34,7 @@ interface triplets {
     [1]: string;
 }
 interface bleServices{
-    [0]: string;
+    [0]?: string;
 }
 interface features{
     atfDisabled: boolean;
@@ -43,7 +43,7 @@ interface features{
     gen: number;
 }
 interface ports{
-    standard: number;
+    standard?: number;
 }
 
 
@@ -62,29 +62,29 @@ maxPower: number;
 maxSpeedMegabitsPerSecond: number;
 }
 interface radios{
-'6e': first;
-na: second;
-ng: third;
+'6e'?: first;
+na?: second;
+ng?: third;
 }
 
 
 interface network{
     bleServices: bleServices;
-    chipset: string;
-    deviceCapabilites: string;
-    ethernetMaxSpeedMegabitsPerSecond: number;
-    features: features;
-    hybrid: string;
-    miniumFirmwareRequired: string;
-    numberOfPorts: number;
+    chipset?: string;
+    deviceCapabilites?: string;
+    ethernetMaxSpeedMegabitsPerSecond?: number;
+    features?: features;
+    hybrid?: string;
+    miniumFirmwareRequired?: string;
+    numberOfPorts?: number;
     ports: ports;
     radios: radios;
-    systemIdHexadecimal: string;
-    type: string;
+    systemIdHexadecimal?: string;
+    type?: string;
 }
 interface unifi{
     adoptability: string;
-    network: network;
+    network?: network;
 }
 interface firmware{
     board: string;
