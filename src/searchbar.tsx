@@ -1,9 +1,18 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { JsonMap } from "./json-map";
 const jsonURL = "https://static.ui.com/fingerprint/ui/public.json"
 var resultNum = 0;
 
-export function Searchbar(){
+interface ContentListInter {
+    itemId: (itemId: string) => void;
+}
+
+export function Searchbar({itemId}: ContentListInter){
+    const handleClick = (id: string) => {
+        console.log("test" + id)
+        itemId(id);
+      };
+
     const [resultNumShown, setResultNumShown] = useState('457')
     const [isFocused, setIsFocused] = useState(false)
     const handleFocus = () => {
@@ -14,7 +23,7 @@ export function Searchbar(){
     };
     const handleBlur = () => {
         setIsFocused(false)
-    }; 
+    };
     
     const jsonData = JsonMap()
     const [value, setValue] = useState('');
@@ -36,7 +45,6 @@ export function Searchbar(){
         }else{
             handleBlur()
         }
-
         const highlightMatch = (text: string) => {
             return text.replace(new RegExp(`(${searchQuery})`, 'gi'), '<u>$1</u>');
         };
@@ -55,9 +63,23 @@ export function Searchbar(){
             setDisplaySearch(displaySearchWithHighlight)
         }
     } 
-    console.log(displaySearch)
+
+    //Handles hiding search results when clicking outside of the div
+    const divRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+    const handleClickOutside = (event: any) => {
+        if (divRef.current && !divRef.current.contains(event.target as Node)) {
+            handleBlur()
+        }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+        document.removeEventListener('click', handleClickOutside);
+    };
+    }, []);
+
     return (
-        <div className="Header-Left">
+        <div className="Header-Left" ref={divRef}>
             <div className="search-container">
                 <i className="Search-Icon">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,13 +93,12 @@ export function Searchbar(){
                     value={value} 
                     onChange={onChange}
                     onFocus={handleFocus}
-                    onBlur={handleBlur}
                 />
             </div>
             {isFocused && <div className="dropdownSearch">
                 {displaySearch.map((item) => (
-                    <a href={item.id} key={item.id}>
-                        <div>{item.product.name}</div>
+                    <a id={item.id} key={item.id} onClick={() => handleClick(item.id)}>
+                        <div dangerouslySetInnerHTML={{ __html: item.product.name}}></div>
                         <div>{item.shortnames[0]}</div>                        
                     </a>
                 ))}

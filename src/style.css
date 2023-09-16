@@ -120,6 +120,10 @@ a{
 	text-align: right;
 	color: #808893;
 }
+.dropdownSearch a u{
+	text-decoration: underline;
+	font-weight: 700;
+}
 
 #Devices-Num{
 	color: #BDBDBD;

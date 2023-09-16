@@ -36,7 +36,7 @@ function App() {
     </div>
     {header === true &&
         <div className="Header-Bottom">
-            <Searchbar />
+            <Searchbar itemId={itemId}/>
             <div className="Header-Right">
                 <div className="Filters-Container" >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="List-Icon" onClick={() => setActive("ContentList")}>
