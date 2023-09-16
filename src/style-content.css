@@ -114,23 +114,35 @@
 	background-color: #F9FAFA;
 	border-radius: 5px;
 }
-.Device-Open-Content table{
+.Device-Open-Content .Table-Container{
 	height: 100%;
 	width: 444px;
 }
-.Device-Open-Content table th{
-	text-align: left;
+.Device-Open-Content .Table-Title{
+	margin-bottom: 16px;
 }
-.Device-Open-Content table td{
+.Device-Open-Content .Table-Title div:nth-child(1){
+	font-size: 20px;
+	font-weight: 700;
 	color: rgba(0,0,0,0.85);
-	
 }
-.Device-Open-Content table td:nth-child(2){
+.Device-Open-Content .Table-Title div:nth-child(2){
+	color: rgba(0,0,0,0.45);
+}
+.Device-Open-Content .Table-Content{
+	width: 100%;
+	height: calc(100% - 56px);
+}
+.Device-Open-Content .Table-Content td:nth-child(2){
 	text-align: right;
 	color: rgba(0,0,0,0.45);
 }
 
-
+.LinkToJSON{
+	position: relative;
+	top: 16px;
+	color: #006FFF;
+}
 
 
 

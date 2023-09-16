@@ -20,18 +20,42 @@ export function Searchbar(){
     const [value, setValue] = useState('');
     const [displaySearch, setDisplaySearch] = useState(jsonData)
     const onChange = (event: any) => {
-        setValue(event.target.value)
-        const filteredData = jsonData.filter((item) => item.product.name.includes(event.target.value))
-        resultNum = filteredData.length
-        setResultNumShown(String(resultNum))
+        const searchQuery = event.target.value.toLowerCase();
+        setValue(event.target.value);
+
+        const filteredData = jsonData.filter((item) =>
+            item.product.name.toLowerCase().includes(searchQuery) ||
+            item.shortnames.toString().toLowerCase().includes(searchQuery)
+        );
+    
+        resultNum = filteredData.length;
+        setResultNumShown(String(resultNum));
+
         if(filteredData.length>0){
             handleFocus()
         }else{
             handleBlur()
         }
-        setDisplaySearch(filteredData)
-    } 
 
+        const highlightMatch = (text: string) => {
+            return text.replace(new RegExp(`(${searchQuery})`, 'gi'), '<u>$1</u>');
+        };
+        const displaySearchWithHighlight = filteredData.map((item) => ({
+            ...item,
+            product: {
+            ...item.product,
+            name: highlightMatch(item.product.name),
+            id: highlightMatch(item.shortnames.toString()),
+            },
+        }));
+
+        if(event.target.value == ''){    
+            setDisplaySearch(jsonData)
+        }else{
+            setDisplaySearch(displaySearchWithHighlight)
+        }
+    } 
+    console.log(displaySearch)
     return (
         <div className="Header-Left">
             <div className="search-container">
@@ -54,6 +78,7 @@ export function Searchbar(){
                 {displaySearch.map((item) => (
                     <a href={item.id} key={item.id}>
                         <div>{item.product.name}</div>
+                        <div>{JSON.stringify(item.product.name, null, 2)}</div>
                         <div>{item.shortnames[0]}</div>                        
                     </a>
                 ))}

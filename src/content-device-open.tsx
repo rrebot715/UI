@@ -40,18 +40,16 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
             {filteredData.map((item) => (
                 <div key={item.id} id={item.id} className="Device-Open-Container">
                     <img src={`https://static.ui.com/fingerprint/ui/icons/${item.icon.id}_${item.icon.resolutions[4][0]}x${item.icon.resolutions[4][1]}.png`} ></img>
-                    <div>
-                        <table>
-                            <tr>
-                                <th colSpan={2}>
-                                    {item.product.name}
-                                </th>
-                            </tr>
-                            <tr>
-                                <th colSpan={2}>
-                                    {item.line.name}
-                                </th>
-                            </tr>                          
+                    <div className="Table-Container">
+                        <div className="Table-Title"> 
+                            <div>
+                                {item.product.name}
+                            </div>
+                            <div>
+                                {item.line.name}
+                            </div> 
+                        </div>
+                        <table className="Table-Content">                     
                             <tr>
                                 <td>
                                     Product Line
@@ -109,6 +107,7 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                 </td>
                             </tr>
                         </table>
+                        <a href="https://static.ui.com/fingerprint/ui/public.json" className="LinkToJSON">See All Details as JSON</a>
                     </div>
                 </div>
             ))}
