@@ -78,7 +78,6 @@ export function Searchbar(){
                 {displaySearch.map((item) => (
                     <a href={item.id} key={item.id}>
                         <div>{item.product.name}</div>
-                        <div>{JSON.stringify(item.product.name, null, 2)}</div>
                         <div>{item.shortnames[0]}</div>                        
                     </a>
                 ))}
