@@ -1,0 +1,138 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+}
+p{
+	-webkit-text-size-adjust: 200%;	
+}
+a{
+	text-decoration: none;
+}
+a:visited{
+	color: inherit;
+}
+#Header{
+	width: 100%;
+}
+.Header-Top,
+.Header-Bottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.Header-Top{
+	width: 100%;
+	background-color: #F4F5F6;
+	height: 50px;
+	box-shadow: 0 5px 10px #838691;
+	min-width: 600px;
+	z-index: 3;
+}
+.Header-Left{
+	display: flex;
+	align-items: center;
+}
+.Header-Left .Header-Top-Text{
+	height: 20px;
+}
+.Header-Top .Header-Right{
+	margin-right: 32px;
+}
+.Header-Bottom{
+	width: calc(100% - 64px);
+	margin: 0 32px;
+	height: 64px;
+}
+
+/*Header UI Logo*/
+#UI-Logo-Link{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+#UI-Logo-Link .Logo-Background{
+	fill: none;
+}
+#UI-Logo-Link .Logo-U{
+	fill: #50565e;
+}
+#UI-Logo-Link:hover .Logo-Background{
+	fill: white;
+}
+#UI-Logo-Link:hover .Logo-U{
+	fill: #006FFF;
+}
+#UI-Logo-Link:focus{
+	border: 1px solid #006FFF;
+}
+#UI-Logo-Link:focus .Logo-Background{
+	fill: none;
+}
+
+/*Searchbar */
+.search-container{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 5px;
+    width: 344px;
+    background-color: #F6F6F8;
+}
+#Searchbar{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 6px;
+    background-color: rgba(0,0,0,0);
+}
+
+.Search-Icon{
+    font-size: 20px;
+    color: #777;
+    margin: 0 5px;
+}
+.dropdownSearch{
+	position: absolute;
+	top: 90px;
+	background-color: white;
+	padding: 5px;
+	box-shadow: 0 5px 10px #838691;
+	border-radius: 5px;
+	font-size: 14px;
+	max-height: 50vh;
+	overflow-y: scroll;
+}
+.dropdownSearch::-webkit-scrollbar {
+    display: none;
+}
+.dropdownSearch a{
+	display: flex;
+	justify-content: space-between;
+	padding: 6px 0;
+}
+.dropdownSearch a div:nth-child(1){
+	text-align: left;
+	color: #50565E;
+}
+.dropdownSearch a div:nth-child(2){
+	text-align: right;
+	color: #808893;
+}
+
+#Devices-Num{
+	color: #BDBDBD;
+	margin-left: 20px;
+	font-size: 12px;
+}
+
+.Filters-Container{
+	display: inline-flex;
+}
+.Filters-Container svg,
+.Filters-Container div{
+	padding: 6px;
+}
