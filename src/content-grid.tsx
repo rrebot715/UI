@@ -13,7 +13,7 @@ export function ContentGrid({itemId}: ContentGridInter){
     return ( <>
         <div className="Grid-Content">
 
-{/*
+
             {jsonData.map((item) => (
                 <div key={item.id} id={item.id} className="Grid-Content-Card" onClick={() => handleClick(item.id)}>
                 <div className="Grid-Top-Container">
@@ -29,7 +29,7 @@ export function ContentGrid({itemId}: ContentGridInter){
 
 
 
-*/}
+
             
 
         </div>
