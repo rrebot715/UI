@@ -136,3 +136,24 @@ a:visited{
 .Filters-Container div{
 	padding: 6px;
 }
+
+
+.Content-Device-Button{
+	background-color: white;
+}
+.Arrows{
+display: inline-flex;
+gap: 4px;
+}
+.Icon{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	box-shadow: 0 5px 8px rgba(0,0,0,0.08);
+	color: rgba(0,0,0,0.45);
+	padding: 4px;
+	border-radius: 5px;
+}
+.Flipped{
+	transform: scaleX(-1);
+}
