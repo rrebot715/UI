@@ -5,10 +5,10 @@ interface ContentDeviceOpenInter {
   }
 
 export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
-    console.log(active)
+    
     const jsonData = JsonMap()
     const filteredData = jsonData.filter((item) => item.id.includes(active))
-    
+    console.log(filteredData)
 
     
 
@@ -38,15 +38,79 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                 </div>
             </div>     
         </div>
-        <div className="List-Content-Container">
+        <div className="Device-Open-Content">
             {filteredData.map((item) => (
-                <div key={item.id} id={item.id} className="List-Item-Line" >
-                    <img src={`https://static.ui.com/fingerprint/ui/icons/${item.icon.id}_${item.icon.resolutions[0][0]}x${item.icon.resolutions[0][1]}.png`}></img>
-                    <div className="List-column">
-                        {item.line.name}
-                    </div>
-                    <div className="List-column">
-                        {item.product.name}
+                <div key={item.id} id={item.id} className="Device-Open-Container">
+                    <img src={`https://static.ui.com/fingerprint/ui/icons/${item.icon.id}_${item.icon.resolutions[4][0]}x${item.icon.resolutions[4][1]}.png`} ></img>
+                    <div>
+                        <table>
+                            <tr>
+                                <th colSpan={2}>
+                                    {item.product.name}
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colSpan={2}>
+                                    {item.line.name}
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Product Line
+                                </td>
+                                <td>
+                                    {item.line.name}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ID
+                                </td>
+                                <td>
+                                    {item.line.id}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Name
+                                </td>
+                                <td>
+                                    {item.product.name}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Short Name
+                                </td>
+                                <td>
+                                    {item.shortnames[0]}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Max. Power
+                                </td>
+                                <td>
+                                   {/*  {item.unifi.network.radios['6e'].maxPower}*/}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Speed
+                                </td>
+                                <td>
+                                   {/*  {item.unifi.network.radios.na.maxSpeedMegabitsPerSecond}*/}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Number of Ports
+                                </td>
+                                <td>
+                                    {item.unifi.network.numberOfPorts}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             ))}

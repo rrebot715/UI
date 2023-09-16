@@ -80,16 +80,6 @@
 .Grid-Bottom-Container p{
 	width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
 .Grid-Top-Right{
 	position: absolute;
 	top: 3px;
@@ -107,9 +97,38 @@
 
 
 
-
-
-
+.Device-Open-Content{
+	width: calc(100% - 64px);
+	margin: 0 32px;
+	line-height: 20px;
+	display: flex;
+	justify-content: space-around;
+}
+.Device-Open-Container{
+	display: inline-flex;
+	align-content: center;
+	justify-content: center;
+	gap: 32px;
+}
+.Device-Open-Content img{
+	background-color: #F9FAFA;
+	border-radius: 5px;
+}
+.Device-Open-Content table{
+	height: 100%;
+	width: 444px;
+}
+.Device-Open-Content table th{
+	text-align: left;
+}
+.Device-Open-Content table td{
+	color: rgba(0,0,0,0.85);
+	
+}
+.Device-Open-Content table td:nth-child(2){
+	text-align: right;
+	color: rgba(0,0,0,0.45);
+}
 
 
 
