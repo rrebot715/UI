@@ -1,0 +1,123 @@
+.List-Content{
+	width: calc(100% - 64px);
+	margin: 0 32px;
+	line-height: 20px;
+}
+.List-Header,
+.List-Item-Line{
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+	border-bottom: 1px solid #EDEDF0;
+}
+.List-Header{
+	font-weight: 700;
+	color: #000000;
+}
+.List-Content-Container {
+    overflow-y: scroll;
+	height: calc(100vh - 157px);
+}
+.List-Content-Container::-webkit-scrollbar {
+    display: none;
+}
+.List-Item-Line{
+	color: rgba(0, 0, 0, 0.65);
+}
+.List-column{
+	width: calc(50% - 18px);
+	padding: 9px;
+}
+.List-Content img,
+.List-Filler-Space{
+	width: 36px;
+	height: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.Grid-Content{
+	width: calc(100% - 64px);
+	margin: 0 32px;
+	line-height: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap: 4px;
+}
+.Grid-Content .Grid-Content-Card{
+	width: 216px;
+	position: relative;
+	border: 1px solid #EDEDF0;
+	border-radius: 5px;
+}
+.Grid-Content .Grid-Content-Card img{
+	height: 100px;
+}
+.Grid-Top-Container{
+	display: flex;
+	justify-content: center;
+	background-color: #F9FAFA;
+}
+.Grid-Bottom-Container{
+	display: flex;
+	background-color: white;
+	width: calc(100% - 16px);
+	margin: 8px;
+	flex-wrap: wrap;
+	align-content: space-between;
+	height: 56px;
+}
+.Grid-Bottom-Container h1,
+.Grid-Bottom-Container p{
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.Grid-Top-Right{
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	background-color: white;
+	padding: 3px;
+	border-radius: 5px;
+	color: #006FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media only screen and (max-width: 999px){
+	*{
+
+	}
+}*/
