@@ -107,7 +107,7 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                     Number of Ports
                                 </td>
                                 <td>
-                                    {item.unifi.network.numberOfPorts}
+                                    {/*{item.unifi.network.numberOfPorts}*/}
                                 </td>
                             </tr>
                         </table>
