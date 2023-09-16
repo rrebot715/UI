@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import './content-style.css';
+import './style-content.css';
 import { Searchbar } from "./searchbar"
 import { ContentList } from "./content-list"
 import { ContentGrid } from "./content-grid"

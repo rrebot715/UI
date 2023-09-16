@@ -12,77 +12,6 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
     const filteredData = jsonData.filter((item) => item.id.includes(active))
     console.log(filteredData)
 
-
-
-
-
-    function renderNestedJSON(data: any) {
-        return (
-            /*{data.map((item: any, index: any) => (
-            <tr key={index}>
-                <td>
-                {item.name}
-                </td>
-                <td>
-                {item.children.length > 0 && renderNestedJSON(item.children)}
-                </td>
-            </tr>
-          ))}*/
-          <ul>
-            {data.map((item: any, index: any) => (
-              <li key={index}>
-                {item.name}
-                {item.children.length > 0 && renderNestedJSON(item.children)}
-              </li>
-            ))}
-          </ul>
-        );
-      }
-      
-
-
-
-
-
-
-
-
-
-
-
-
-    
-/*
-
-    const itemsArray = Object.values(filteredData);
-
-    
-
-    const renderedItems = itemsArray.map((item, index) => {
-      if (item !== undefined) {
-        // Perform mapping and rendering for a defined item
-        return (
-            <tr key={index}>
-                <td>
-                    test
-                </td>
-                <td>
-                    {item.children.length > 0 && renderNestedJSON(item.children)}
-                </td>
-            </tr>
-        );
-      } else {
-        // Handle the case where the item is undefined (if needed)
-        return (
-          <div key={index}>
-            Item is undefined
-          </div>
-        );
-      }
-    });
-    console.log("renderedItems")
-    console.log(renderedItems)
-*/
     return ( <>
         <div className="Header-Bottom">
             <div className="Header-Left">
@@ -122,11 +51,8 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                 <th colSpan={2}>
                                     {item.line.name}
                                 </th>
-                            </tr>
-
-                            {renderNestedJSON([filteredData])}
-
-                           {/**  <tr>
+                            </tr>                          
+                            <tr>
                                 <td>
                                     Product Line
                                 </td>
@@ -158,24 +84,12 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                     {item.shortnames[0]}
                                 </td>
                             </tr>
-
-
-
-
-
-
-
-
-
-
-
-
                             <tr>
                                 <td>
                                     Max. Power
                                 </td>
                                 <td>
-                                    {item.unifi.network.radios['6e'].maxPower}
+                                    {item.unifi?.network?.radios['6e']?.maxPower}
                                 </td>
                             </tr>
                             <tr>
@@ -183,7 +97,7 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                     Speed
                                 </td>
                                 <td>
-                                    {item.unifi.network.radios.na.maxSpeedMegabitsPerSecond}
+                                    {item.unifi?.network?.radios?.na?.maxSpeedMegabitsPerSecond}
                                 </td>
                             </tr>
                             <tr>
@@ -191,9 +105,9 @@ export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
                                     Number of Ports
                                 </td>
                                 <td>
-                                    {item.unifi.network.numberOfPorts}
+                                    {item.unifi?.network?.numberOfPorts}
                                 </td>
-                            </tr>*/}
+                            </tr>
                         </table>
                     </div>
                 </div>
