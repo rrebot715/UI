@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 import './content-style.css';
-//import { Searchbar } from "./searchbar"
+import { Searchbar } from "./searchbar"
 import { ContentList } from "./content-list"
 import { ContentGrid } from "./content-grid"
 import { ContentDeviceOpen } from './content-device-open';
@@ -29,7 +29,7 @@ function App() {
             </div>
         </div>
         <div className="Header-Bottom">
-            {/*<Searchbar />*/}
+            <Searchbar />
             <div className="Header-Right">
                 <div className="Filters-Container" >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="List-Icon" onClick={() => setActive("ContentList")}>
