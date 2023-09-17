@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 const jsonURL = "https://static.ui.com/fingerprint/ui/public.json"
 
-export function JsonMap(){
+export function JsonMap(filters: any){
     const [dataUnmapped, setdataUnmapped] = useState([])
     const [error, setError] = useState({})
     useEffect(() => {
@@ -107,5 +107,35 @@ export function JsonMap(){
     }
 
     const jsonData: UserData[] = dataUnmapped; 
+    console.log("filters:"+filters[0])
+
+
+
+
+
+
+
+
+/*
+
+
+const [value, setValue] = useState('');
+const [displaySearch, setDisplaySearch] = useState(jsonData)
+
+const searchQuery = filters[0].toLowerCase();
+//setValue(filters[0]);
+setValue('');
+
+const filteredData = jsonData.filter((item) =>
+    item.product.name.toLowerCase().includes(searchQuery) ||
+    item.shortnames.toString().toLowerCase().includes(searchQuery)
+);
+
+setDisplaySearch(filteredData)
+
+
+
+
+    return ( displaySearch )*/
     return ( jsonData )
 }

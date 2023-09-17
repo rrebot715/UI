@@ -25,7 +25,7 @@ export function Searchbar({itemId}: ContentListInter){
         setIsFocused(false)
     };
     
-    const jsonData = JsonMap()
+    const jsonData = JsonMap(null)
     const [value, setValue] = useState('');
     const [displaySearch, setDisplaySearch] = useState(jsonData)
     const onChange = (event: any) => {

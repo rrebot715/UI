@@ -2,9 +2,14 @@ import { JsonMap } from "./json-map";
 interface ContentGridInter {
     itemId: (itemId: string) => void;
 }
+interface test {
+    filters: (filters: string) => void;
+}
 
-export function ContentGrid({itemId}: ContentGridInter){
-    const jsonData = JsonMap()
+//export function ContentGrid({itemId}: ContentGridInter){
+    export function ContentGrid(filtersNew: any){
+    const {itemId, filters} = filtersNew;    
+    const jsonData = JsonMap(filters)
     const handleClick = (id: string) => {
         itemId(id);
       };

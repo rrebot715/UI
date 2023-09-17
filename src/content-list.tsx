@@ -3,9 +3,14 @@ import { JsonMap } from "./json-map";
 interface ContentListInter {
     itemId: (itemId: string) => void;
 }
+interface test {
+    filters: (filters: string) => void;
+}
 
-export function ContentList({itemId}: ContentListInter){
-    const jsonData = JsonMap()
+//export function ContentList({itemId}: ContentListInter, filters: test){
+    export function ContentList(filtersNew: any){
+    const {itemId, filters} = filtersNew;
+    const jsonData = JsonMap(filters)
     const handleClick = (id: string) => {
         itemId(id);
       };

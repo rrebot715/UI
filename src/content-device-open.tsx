@@ -8,7 +8,7 @@ interface ContentDeviceOpenInter {
   
 export function ContentDeviceOpen({active}: ContentDeviceOpenInter){
     
-    const jsonData = JsonMap()
+    const jsonData = JsonMap(null)
     const filteredData = jsonData.filter((item) => item.id.includes(active))
     console.log(filteredData)
 
