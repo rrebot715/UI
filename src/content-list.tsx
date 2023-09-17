@@ -8,7 +8,7 @@ interface test {
 }
 
 //export function ContentList({itemId}: ContentListInter, filters: test){
-    export function ContentList(filtersNew: any){
+export function ContentList(filtersNew: any){
     const {itemId, filters} = filtersNew;
     const jsonData = JsonMap(filters)
     const handleClick = (id: string) => {

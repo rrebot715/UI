@@ -9,7 +9,6 @@ interface ContentListInter {
 
 export function Searchbar({itemId}: ContentListInter){
     const handleClick = (id: string) => {
-        console.log("test" + id)
         itemId(id);
       };
 
