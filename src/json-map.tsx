@@ -65,21 +65,21 @@ export function JsonMap(filters: any){
     }
     interface network{
         bleServices: bleServices;
-        chipset?: string;
-        deviceCapabilites?: string;
-        ethernetMaxSpeedMegabitsPerSecond?: number;
-        features?: features;
-        hybrid?: string;
-        miniumFirmwareRequired?: string;
-        numberOfPorts?: number;
+        chipset: string;
+        deviceCapabilites: string;
+        ethernetMaxSpeedMegabitsPerSecond: number;
+        features: features;
+        hybrid: string;
+        miniumFirmwareRequired: string;
+        numberOfPorts: number;
         ports: ports;
         radios: radios;
-        systemIdHexadecimal?: string;
-        type?: string;
+        systemIdHexadecimal: string;
+        type: string;
     }
     interface unifi{
         adoptability: string;
-        network?: network;
+        network: network;
     }
     interface firmware{
         board: string;

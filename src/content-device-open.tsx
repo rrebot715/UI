@@ -26,7 +26,8 @@ export function ContentDeviceOpen(filtersNew: any){
             }else{
                 itemId(jsonData[selectedItems.length].id);
             }
-        }      
+        } 
+        console.log(jsonData[selectedItems.length]);     
     };
     const filteredData = jsonData.filter((item) => item.id.includes(filtersNew.active))
 
@@ -100,30 +101,24 @@ export function ContentDeviceOpen(filtersNew: any){
                                     {item.shortnames[0]}
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    Max. Power
-                                </td>
-                                <td>
-                                    {item.unifi?.network?.radios['6e']?.maxPower}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Speed
-                                </td>
-                                <td>
-                                    {item.unifi?.network?.radios?.na?.maxSpeedMegabitsPerSecond}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Number of Ports
-                                </td>
-                                <td>
-                                    {item.unifi?.network?.numberOfPorts}
-                                </td>
-                            </tr>
+                            {item.unifi?.network?.radios['6e']?.maxPower != null &&
+                                <tr>
+                                    <td>Max. Power</td>
+                                    <td>{item.unifi?.network?.radios?.na?.maxSpeedMegabitsPerSecond}</td>
+                                </tr>
+                            }
+                            {item.unifi?.network?.radios?.na?.maxSpeedMegabitsPerSecond != null &&
+                                <tr>
+                                    <td>Speed</td>
+                                    <td>{item.unifi?.network?.radios?.na?.maxSpeedMegabitsPerSecond}</td>
+                                </tr>
+                            }
+                            {item.unifi?.network?.numberOfPorts != null &&
+                                <tr>
+                                    <td>Number of Ports</td>
+                                    <td>{item.unifi?.network?.numberOfPorts}</td>
+                                </tr>
+                            }       
                         </table>
                         <a href="https://static.ui.com/fingerprint/ui/public.json" className="LinkToJSON">See All Details as JSON</a>
                     </div>
