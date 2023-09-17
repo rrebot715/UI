@@ -106,24 +106,20 @@ export function JsonMap(filters: any){
         uisp: uisp;
     }
 
-const jsonData: UserData[] = dataUnmapped; 
-const [displaySearch, setDisplaySearch] = useState(jsonData)
-setDisplaySearch(jsonData)
+    const jsonData: UserData[] = dataUnmapped; 
+    const filtersList: any = []
 
-if(filters != null){
-    console.log(filters[1])
-
-    const searchQuery = filters[0].toLowerCase();
-
-    const filteredData = jsonData.filter((item) =>
-        item.product.name.toLowerCase().includes(searchQuery) ||
-        item.shortnames.toString().toLowerCase().includes(searchQuery)
-    );
-
-    setDisplaySearch(filteredData)
-}
-
-
-    return ( displaySearch )
-//    return ( jsonData )
+    if (filters == '' || filters == null) {
+        return(jsonData)
+    }else{
+        filtersList.push(filters)
+        const filteredData = jsonData.filter((item) => {
+            return filtersList.some((categoryList: any) => {
+              return categoryList.some((query: any) => {
+                return item.line.name.includes(query);
+              });
+            });
+          });
+        return( filteredData )    
+    }  
 }

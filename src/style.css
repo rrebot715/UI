@@ -138,6 +138,24 @@ a{
 .Filters-Container div{
 	padding: 6px;
 }
+.Filter-Dropdown{
+	position: absolute;
+	top: 90px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 5px;
+	box-shadow: 0 5px 10px #838691;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
 
 
 .Content-Device-Button{

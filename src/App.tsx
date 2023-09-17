@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './style.css';
 import './style-content.css';
 import { Searchbar } from "./searchbar"
@@ -14,11 +14,26 @@ function App() {
         setActive(newId);
       };
     
-    const [filters, setFilters] = useState(['',false]);
-    const filtersSelected = (newFilters: any, newToggle: boolean) => {
-        setFilters([newFilters, newToggle]);
-    };
+    const [filters, setFilters] = useState<string[]>([]);
 
+    const filtersSelected = (newFilters: string) => {
+        if(newFilters==="Reset"){
+            //Unchecks all boxes
+            for (let x = 0; x < filters.length; x++) {
+                const checkbox = document.getElementById(filters[x]) as HTMLInputElement;
+                checkbox.checked = false;
+              } 
+            setFilters([])
+        }else{
+            //Checks if exists in array. If it does, removes it. Else adds it
+            const index = filters.indexOf(newFilters);
+            if (index !== -1) {
+            setFilters([...filters.slice(0, index), ...filters.slice(index + 1)]);
+            } else {
+            setFilters([...filters, newFilters]);
+            }
+        }
+    };
 
   return ( 
   <>
@@ -54,16 +69,70 @@ function App() {
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="Grid-Icon" onClick={() => setActive("ContentGrid")}>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 8.5V4H4V8.5H8.5ZM4 3H8.5C9.052 3 9.5 3.448 9.5 4V8.5C9.5 9.052 9.052 9.5 8.5 9.5H4C3.448 9.5 3 9.052 3 8.5V4C3 3.448 3.448 3 4 3ZM8.5 16V11.5H4V16H8.5ZM4 10.5H8.5C9.052 10.5 9.5 10.948 9.5 11.5V16C9.5 16.552 9.052 17 8.5 17H4C3.448 17 3 16.552 3 16V11.5C3 10.948 3.448 10.5 4 10.5ZM16 4V8.5H11.5V4H16ZM16 3H11.5C10.948 3 10.5 3.448 10.5 4V8.5C10.5 9.052 10.948 9.5 11.5 9.5H16C16.552 9.5 17 9.052 17 8.5V4C17 3.448 16.552 3 16 3ZM16 16V11.5H11.5V16H16ZM11.5 10.5H16C16.552 10.5 17 10.948 17 11.5V16C17 16.552 16.552 17 16 17H11.5C10.948 17 10.5 16.552 10.5 16V11.5C10.5 10.948 10.948 10.5 11.5 10.5Z" fill="#838691"/>
                     </svg>
-                    <div className="Filter" onClick={() => filtersSelected("this.id",true)}>
+                    <div className="Filter">
                         Filter
                     </div>
                 </div>
+                <div className='Filter-Dropdown'>
+                        <h1>Product line</h1>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type='checkbox' id="UniFi" onClick={() => filtersSelected("UniFi")}></input>
+                                </td>
+                                <td>
+                                    UniFi
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <input type='checkbox' id="UniFi LTE" onClick={() => filtersSelected("UniFi LTE")}></input>
+                                </td>
+                                <td>
+                                    UniFi LTE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <input type='checkbox' id="UniFi Protect" onClick={() => filtersSelected("UniFi Protect")}></input>
+                                </td>
+                                <td>
+                                    UniFi Protect
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <input type='checkbox' id="UniFi Access" onClick={() => filtersSelected("UniFi Access")}></input>
+                                </td>
+                                <td>
+                                    UniFi Access
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <input type='checkbox' id="airMAX" onClick={() => filtersSelected("airMAX")}></input>
+                                </td>
+                                <td>
+                                    airMax
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <input type='checkbox' id="EdgeMAX" onClick={() => filtersSelected("EdgeMAX")}></input>
+                                </td>
+                                <td>
+                                    EdgeMax
+                                </td>
+                            </tr>
+                        </table>
+                        <div onClick={() => filtersSelected("Reset")}>Reset</div>
+                    </div>
             </div>     
         </div>
     }
         {active === "ContentList" &&  <ContentList itemId={itemId} filters={filters}/>}
         {active === "ContentGrid" &&  <ContentGrid itemId={itemId} filters={filters}/>}
-        {active != "ContentGrid" && active != "ContentList"  &&  <ContentDeviceOpen active={active}/>}    
+        {active != "ContentGrid" && active != "ContentList"  &&  <ContentDeviceOpen itemId={itemId} active={active}/>}    
     </>
   );
 }
