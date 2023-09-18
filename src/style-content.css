@@ -17,16 +17,36 @@
 .List-Content-Container {
     overflow-y: scroll;
 	height: calc(100vh - 157px);
+	display: flex;
+	flex-direction: column;
+	margin-top: -5px;
 }
 .List-Content-Container::-webkit-scrollbar {
     display: none;
 }
 .List-Item-Line{
 	color: rgba(0, 0, 0, 0.65);
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid rgba(0,0,0,0);
+	padding: 0;
+	margin: 0;
+	background: none;
+	cursor: pointer;
+	font: inherit;
+	color: inherit;
+}
+.List-Item-Line:hover{
+	background-color: #EDEDF0;
+}
+.List-Item-Line:focus{
+	border-bottom: 1px solid blue !important;
+	border-top: 1px solid blue !important;
 }
 .List-column{
 	width: calc(50% - 18px);
 	padding: 9px;
+	text-align: left;
 }
 .List-Content img,
 .List-Filler-Space{
@@ -142,6 +162,14 @@
 	position: relative;
 	top: 16px;
 	color: #006FFF;
+	padding: 6px 2px;
+}
+.LinkToJSON:hover{
+	color: #0059CC;
+}
+.LinkToJSON:focus{
+	border: 1px solid #006FFF;
+	border-radius: 5px;
 }
 
 

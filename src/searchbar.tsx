@@ -95,10 +95,10 @@ export function Searchbar({itemId}: ContentListInter){
             </div>
             {isFocused && <div className="dropdownSearch">
                 {displaySearch.map((item) => (
-                    <a id={item.id} key={item.id} onClick={() => handleClick(item.id)}>
+                    <button id={item.id} key={item.id} onClick={() => handleClick(item.id)}>
                         <div dangerouslySetInnerHTML={{ __html: item.product.name}}></div>
                         <div>{item.shortnames[0]}</div>                        
-                    </a>
+                    </button>
                 ))}
                 </div>}
             <div id="Devices-Num">

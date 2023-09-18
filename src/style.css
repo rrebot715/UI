@@ -110,51 +110,85 @@ a{
     flex: 1;
     border: none;
     outline: none;
-    padding: 6px;
+    padding: 6px 6px 6px 30px;
     background-color: rgba(0,0,0,0);
+}
+#Searchbar:hover{
+	background-color: #EDEDF0;
+}
+#Searchbar:focus{
+	border: 1px solid #006FFF;
+	border-radius: 5px;
 }
 
 .Search-Icon{
+	position: absolute;
+	left: 32px;
+	top: 72px;
     font-size: 20px;
     color: #777;
-    margin: 0 5px;
+    margin: 0 11px;
 }
 .dropdownSearch,
 .Filter-Dropdown{
 	position: absolute;
 	top: 90px;
+	display: flex;
+	flex-direction: column;
 	background-color: white;
-	padding: 5px;
 	box-shadow: 0 5px 10px #838691;
 	border-radius: 5px;
 	font-size: 14px;
-	z-index: 3;
 }
 .dropdownSearch{
+	padding: 8px;
 	max-height: 50vh;
 	overflow-y: scroll;
+	z-index: 4;
 }
 .dropdownSearch::-webkit-scrollbar {
     display: none;
 }
-.dropdownSearch a{
+.dropdownSearch button{
 	display: flex;
 	justify-content: space-between;
-	padding: 6px 0;
+	padding: 6px 8px;
+	border: 1px solid rgba(0,0,0,0);
+	width: 100%;
+	background: none;
+	cursor: pointer;
 }
-.dropdownSearch a div:nth-child(1){
+.dropdownSearch button div:nth-child(1){
 	text-align: left;
 	color: #50565E;
 	padding-right: 32px;
 }
-.dropdownSearch a div:nth-child(2){
+.dropdownSearch button div:nth-child(2){
 	text-align: right;
 	color: #808893;
 }
-.dropdownSearch a u{
+.dropdownSearch button u{
 	text-decoration: underline;
 	font-weight: 700;
 }
+.dropdownSearch button:hover{
+	background-color: #F4F5F6;
+}
+.dropdownSearch button:focus{
+	border: 1px solid #006FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 #Devices-Num{
 	color: #BDBDBD;
 	margin-left: 20px;
@@ -170,10 +204,9 @@ a{
 }
 .Filter-Dropdown{
 	right: 32px;
-	display: flex;
-	flex-direction: column;
 	padding: 16px;
 	gap: 16px;
+	z-index: 3;
 }
 .Filter-Dropdown .Filter-Options{
 	display: inline-flex;
@@ -184,17 +217,27 @@ a{
 }
 .Filter-Dropdown .Filter-Options .Filter-Row{
 	display: flex;
-	gap: 4px;
-	border: 1px solid #006FFF;
+	gap: 8px;
+	border: 1px solid rgba(0,0,0,0);
 	border-radius: 5px;
 	padding: 1px 5px 1px;
+}.Filter-Dropdown .Filter-Options .Filter-Row:hover{
+	border: 1px solid #006FFF;
 }
 .Filter-Dropdown .Filter-Options .Filter-Row input{
 	transform: scale(1.5);
 }
-.Filter-Dropdown .Filter-Options .Filter-Row input:hover{
-	background-color: #006FFF;
-}
+
+
+
+
+
+
+
+
+
+
+
 #Filter-Dropdown-Reset{
 	color: #F03A3E;
 }

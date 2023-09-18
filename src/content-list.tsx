@@ -21,7 +21,7 @@ export function ContentList(filtersNew: any){
         </div>
         <div className="List-Content-Container">
             {jsonData.map((item) => (
-                <div key={item.id} id={item.id} className="List-Item-Line" onClick={() => handleClick(item.id)}>
+                <button key={item.id} id={item.id} className="List-Item-Line" onClick={() => handleClick(item.id)}>
                     <img src={`https://static.ui.com/fingerprint/ui/icons/${item.icon.id}_${item.icon.resolutions[0][0]}x${item.icon.resolutions[0][1]}.png`}></img>
                     <div className="List-column">
                         {item.line.name}
@@ -29,7 +29,7 @@ export function ContentList(filtersNew: any){
                     <div className="List-column">
                         {item.product.name}
                     </div>
-                </div>
+                </button>
             ))}
         </div>
     </div>
