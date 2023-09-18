@@ -104,6 +104,7 @@ export function JsonMap(filters: any){
         triplets: triplets;
         unifi: unifi;
         uisp: uisp;
+        [key: string]: any;
     }
 
     const jsonData: UserData[] = dataUnmapped; 
