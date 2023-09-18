@@ -138,7 +138,7 @@ export function ContentDeviceOpen(filtersNew: any){
                         <div key={key}>
                             <strong>{key}:</strong> {JSON.stringify(item[key])}
                         </div>
-                    ))}
+                        ))}
                 </div>
             ))}
         </div>
