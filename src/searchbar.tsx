@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react"
 import { JsonMap } from "./json-map";
-const jsonURL = "https://static.ui.com/fingerprint/ui/public.json"
 var resultNum = 0;
 
 interface ContentListInter {

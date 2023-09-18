@@ -12,6 +12,32 @@ p{
 a{
 	text-decoration: none;
 }
+.hidden{
+	display: none !important;
+}
+.lightRed{
+	color: #F9B0B2 !important;
+}
+.Icon{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	box-shadow: 0 5px 8px rgba(0,0,0,0.08);
+	color: rgba(0,0,0,0.45);
+	padding: 4px;
+	border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0);
+}
+.Icon:hover{
+	background-color: #F4F5F6;
+}
+.Icon:focus{
+	border: 1px solid #006FFF !important;
+}
+.Icon-Active{
+	color: #006FFF;
+	background-color: #F4F5F6;
+}
 #Header{
 	width: 100%;
 }
@@ -50,6 +76,7 @@ a{
 	display: inline-block;
 	width: 50px;
 	height: 50px;
+	border: 1px solid rgba(0,0,0,0);
 }
 #UI-Logo-Link .Logo-Background{
 	fill: none;
@@ -92,7 +119,8 @@ a{
     color: #777;
     margin: 0 5px;
 }
-.dropdownSearch{
+.dropdownSearch,
+.Filter-Dropdown{
 	position: absolute;
 	top: 90px;
 	background-color: white;
@@ -100,6 +128,9 @@ a{
 	box-shadow: 0 5px 10px #838691;
 	border-radius: 5px;
 	font-size: 14px;
+	z-index: 3;
+}
+.dropdownSearch{
 	max-height: 50vh;
 	overflow-y: scroll;
 }
@@ -124,30 +155,48 @@ a{
 	text-decoration: underline;
 	font-weight: 700;
 }
-
 #Devices-Num{
 	color: #BDBDBD;
 	margin-left: 20px;
 	font-size: 12px;
 }
-
 .Filters-Container{
 	display: inline-flex;
 }
 .Filters-Container svg,
-.Filters-Container div{
-	padding: 6px;
+.Filters-Container button{
+	box-shadow: none;
+	background-color: rgba(0,0,0,0);
 }
 .Filter-Dropdown{
-	position: absolute;
-	top: 90px;
+	right: 32px;
 	display: flex;
 	flex-direction: column;
-	background-color: white;
-	padding: 5px;
-	box-shadow: 0 5px 10px #838691;
+	padding: 16px;
+	gap: 16px;
+}
+.Filter-Dropdown .Filter-Options{
+	display: inline-flex;
+	flex-wrap: wrap;
+	line-height: 14px;
+	gap: 8px;
+	width: 122px;
+}
+.Filter-Dropdown .Filter-Options .Filter-Row{
+	display: flex;
+	gap: 4px;
+	border: 1px solid #006FFF;
 	border-radius: 5px;
-	font-size: 14px;
+	padding: 1px 5px 1px;
+}
+.Filter-Dropdown .Filter-Options .Filter-Row input{
+	transform: scale(1.5);
+}
+.Filter-Dropdown .Filter-Options .Filter-Row input:hover{
+	background-color: #006FFF;
+}
+#Filter-Dropdown-Reset{
+	color: #F03A3E;
 }
 
 
@@ -165,15 +214,7 @@ a{
 display: inline-flex;
 gap: 4px;
 }
-.Icon{
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	box-shadow: 0 5px 8px rgba(0,0,0,0.08);
-	color: rgba(0,0,0,0.45);
-	padding: 4px;
-	border-radius: 5px;
-}
+
 .Flipped{
 	transform: scaleX(-1);
 }
