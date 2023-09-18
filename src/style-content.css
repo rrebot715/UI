@@ -1,3 +1,4 @@
+/****List Content****/
 .List-Content{
 	width: calc(100% - 64px);
 	margin: 0 32px;
@@ -54,53 +55,52 @@
 	height: 36px;
 }
 
-
-
-
-
-
-
-
-
-
-
-.Grid-Content{
+/****Grid Content****/
+.Grid-Content {
 	width: calc(100% - 64px);
 	margin: 0 32px;
 	line-height: 20px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	gap: 4px;
+	gap: 16px;
 }
-.Grid-Content .Grid-Content-Card{
+.Grid-Content-Card {
 	width: 216px;
 	position: relative;
 	border: 1px solid #EDEDF0;
 	border-radius: 5px;
+	padding: 0;
+	margin: 0;
+	background: none;
+	cursor: pointer;
 }
-.Grid-Content .Grid-Content-Card img{
+.Grid-Content-Card img {
 	height: 100px;
 }
-.Grid-Top-Container{
+.Grid-Top-Container,
+.Grid-Bottom-Container {
 	display: flex;
+	border-radius: 5px;
+}
+.Grid-Top-Container {
 	justify-content: center;
 	background-color: #F9FAFA;
 }
-.Grid-Bottom-Container{
-	display: flex;
+.Grid-Bottom-Container {
 	background-color: white;
 	width: calc(100% - 16px);
-	margin: 8px;
+	padding: 8px;
 	flex-wrap: wrap;
 	align-content: space-between;
 	height: 56px;
 }
 .Grid-Bottom-Container h1,
-.Grid-Bottom-Container p{
+.Grid-Bottom-Container p {
 	width: 100%;
+	text-align: left;
 }
-.Grid-Top-Right{
+.Grid-Top-Right {
 	position: absolute;
 	top: 3px;
 	right: 3px;
@@ -109,14 +109,17 @@
 	border-radius: 5px;
 	color: #006FFF;
 }
-
-
-
-
-
-
-
-
+.Grid-Content-Card:hover .Grid-Top-Container {
+	background-color: #F4F5F6;
+}
+.Grid-Content-Card:hover .Grid-Bottom-Container {
+	background-color: #F9FAFA;
+}
+.Grid-Content-Card:focus {
+	border: 1px solid blue;
+}
+  
+/****Device Page****/
 .Device-Open-Content{
 	width: calc(100% - 64px);
 	margin: 0 32px;
@@ -157,7 +160,6 @@
 	text-align: right;
 	color: rgba(0,0,0,0.45);
 }
-
 .LinkToJSON{
 	position: relative;
 	top: 16px;
