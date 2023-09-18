@@ -120,12 +120,16 @@
 }
   
 /****Device Page****/
+.showJson,
 .Device-Open-Content{
 	width: calc(100% - 64px);
 	margin: 0 32px;
 	line-height: 20px;
 	display: flex;
 	justify-content: space-around;
+}
+.showJson{
+	justify-content: flex-start;
 }
 .Device-Open-Container{
 	display: inline-flex;
@@ -165,6 +169,10 @@
 	top: 16px;
 	color: #006FFF;
 	padding: 6px 2px;
+	margin: 0;
+	background: none;
+	cursor: pointer;
+	border: 1px solid rgba(0,0,0,0);
 }
 .LinkToJSON:hover{
 	color: #0059CC;

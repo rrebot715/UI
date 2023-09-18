@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { JsonMap } from "./json-map";
 
 export function ContentDeviceOpen(filtersNew: any){
@@ -30,6 +31,10 @@ export function ContentDeviceOpen(filtersNew: any){
         console.log(jsonData[selectedItems.length]);     
     };
     const filteredData = jsonData.filter((item) => item.id.includes(filtersNew.active))
+    const [showJsonToggle, setShowJson] = useState(false);
+    const showJson = () => {
+        setShowJson(true);
+    };
 
     return ( <>
         <div className="Header-Bottom">
@@ -55,7 +60,7 @@ export function ContentDeviceOpen(filtersNew: any){
                 </div>
             </div>     
         </div>
-        <div className="Device-Open-Content">
+        <div className="Device-Open-Content" style={{ display: showJsonToggle === false ? 'flex' : 'none'}}>
             {filteredData.map((item) => (
                 <div key={item.id} id={item.id} className="Device-Open-Container">
                     <img src={`https://static.ui.com/fingerprint/ui/icons/${item.icon.id}_${item.icon.resolutions[4][0]}x${item.icon.resolutions[4][1]}.png`} ></img>
@@ -120,8 +125,20 @@ export function ContentDeviceOpen(filtersNew: any){
                                 </tr>
                             }       
                         </table>
-                        <a href="https://static.ui.com/fingerprint/ui/public.json" className="LinkToJSON">See All Details as JSON</a>
+                        {/*<a href="https://static.ui.com/fingerprint/ui/public.json" className="LinkToJSON">See All Details as JSON</a>*/}
+                        <button className="LinkToJSON" onClick={() => showJson()}>See All Details as JSON</button>
                     </div>
+                </div>
+            ))}
+        </div>
+        <div className="showJson" style={{ display: showJsonToggle === true ? 'flex' : 'none'}}>
+            {filteredData.map((item) => (
+                <div key={item.id}>
+                    {Object.keys(item).map((key) => (
+                        <div key={key}>
+                            <strong>{key}:</strong> {JSON.stringify(item[key])}
+                        </div>
+                    ))}
                 </div>
             ))}
         </div>
