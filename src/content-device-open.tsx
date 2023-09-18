@@ -60,7 +60,7 @@ export function ContentDeviceOpen(filtersNew: any){
                 </div>
             </div>     
         </div>
-        <div className="Device-Open-Content" style={{ display: showJsonToggle === false ? 'flex' : 'none'}}>
+        <div className="Device-Open-Content">
             {filteredData.map((item) => (
                 <div key={item.id} id={item.id} className="Device-Open-Container">
                     <img src={`https://static.ui.com/fingerprint/ui/icons/${item.icon.id}_${item.icon.resolutions[4][0]}x${item.icon.resolutions[4][1]}.png`} ></img>
@@ -126,7 +126,7 @@ export function ContentDeviceOpen(filtersNew: any){
                             }       
                         </table>
                         {/*<a href="https://static.ui.com/fingerprint/ui/public.json" className="LinkToJSON">See All Details as JSON</a>*/}
-                        <button className="LinkToJSON" onClick={() => showJson()}>See All Details as JSON</button>
+                        <button className="LinkToJSON" onClick={() => showJson()} style={{ display: showJsonToggle === false ? 'block' : 'none'}}>See All Details as JSON</button>
                     </div>
                 </div>
             ))}
