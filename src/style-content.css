@@ -58,6 +58,8 @@
 /****Grid Content****/
 .Grid-Content {
 	width: calc(100% - 64px);
+	overflow-y: scroll;
+	height: calc(100vh - 157px);
 	margin: 0 32px;
 	line-height: 20px;
 	display: flex;
