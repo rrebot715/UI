@@ -27,6 +27,7 @@ a{
 	padding: 4px;
 	border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0);
+	cursor: pointer;
 }
 .Icon:hover{
 	background-color: #F4F5F6;
@@ -221,25 +222,19 @@ a{
 	border: 1px solid rgba(0,0,0,0);
 	border-radius: 5px;
 	padding: 1px 5px 1px;
-}.Filter-Dropdown .Filter-Options .Filter-Row:hover{
+}
+.Filter-Dropdown .Filter-Options .Filter-Row:hover{
 	border: 1px solid #006FFF;
 }
 .Filter-Dropdown .Filter-Options .Filter-Row input{
 	transform: scale(1.5);
 }
-
-
-
-
-
-
-
-
-
-
-
+.Filter-Dropdown .Filter-Options input[type="checkbox"]{
+	cursor: pointer;
+}
 #Filter-Dropdown-Reset{
 	color: #F03A3E;
+	cursor: pointer;
 }
 
 
