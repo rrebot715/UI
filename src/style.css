@@ -148,6 +148,7 @@ a{
 	z-index: 4;
 }
 .dropdownSearch::-webkit-scrollbar {
+	scrollbar-width: none;
     display: none;
 }
 .dropdownSearch button{

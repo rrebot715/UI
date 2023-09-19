@@ -1,3 +1,9 @@
+.Grid-Content::-webkit-scrollbar,
+.List-Content-Container::-webkit-scrollbar {
+	scrollbar-width: none;
+    display: none;
+}
+
 /****List Content****/
 .List-Content{
 	width: calc(100% - 64px);
@@ -21,9 +27,6 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: -5px;
-}
-.List-Content-Container::-webkit-scrollbar {
-    display: none;
 }
 .List-Item-Line{
 	color: rgba(0, 0, 0, 0.65);
@@ -66,9 +69,6 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	gap: 16px;
-}
-.Grid-Content::-webkit-scrollbar {
-    display: none;
 }
 .Grid-Content-Card {
 	width: 216px;
