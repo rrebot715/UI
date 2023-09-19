@@ -1,3 +1,4 @@
+/***Hides page scrollbar***/
 .Grid-Content::-webkit-scrollbar,
 .List-Content-Container::-webkit-scrollbar {
     display: none;
@@ -7,8 +8,6 @@
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 }
-
-
 
 /****List Content****/
 .List-Content{
@@ -196,12 +195,3 @@
 	border: 1px solid #006FFF;
 	border-radius: 5px;
 }
-
-
-
-/*
-@media only screen and (max-width: 999px){
-	*{
-
-	}
-}*/
