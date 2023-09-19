@@ -65,6 +65,9 @@
 	justify-content: space-around;
 	gap: 16px;
 }
+.Grid-Content::-webkit-scrollbar {
+    display: none;
+}
 .Grid-Content-Card {
 	width: 216px;
 	position: relative;
