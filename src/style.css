@@ -15,9 +15,6 @@ a{
 .hidden{
 	display: none !important;
 }
-.lightRed{
-	color: #F9B0B2 !important;
-}
 .Icon{
 	display: flex;
 	align-content: center;
@@ -236,6 +233,10 @@ a{
 #Filter-Dropdown-Reset{
 	color: #F03A3E;
 	cursor: pointer;
+}
+.lightRed{
+	cursor: default !important;
+	color: #F9B0B2 !important;
 }
 
 
